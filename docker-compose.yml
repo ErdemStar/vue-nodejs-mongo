@@ -1,0 +1,17 @@
+# docker-compose.yml
+version: "3"
+services:
+  frontend:
+    image: todo-vue
+    ports: 
+      - "8080:8080"
+  backend:
+    image: todo-node
+    ports: 
+      - "3000:3000"
+    depends_on: 
+    - mongodb
+  mongodb:
+    image: mongo
+    ports: 
+    - "27017:27017"
